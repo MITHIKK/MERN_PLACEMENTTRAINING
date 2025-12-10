@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Position Demo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 50px;
+    }
+
+    .box {
+        width: 180px;
+        height: 80px;
+        padding: 10px;
+        margin: 20px 0;
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    /* 1. STATIC (default position — cannot move using top/left) */
+    .static {
+        background: #666;
+        position: static;
+    }
+
+    /* 2. RELATIVE (moves relative to its original position) */
+    .relative {
+        background: #007bff;
+        position: relative;
+        top: 10px;   /* Moves down */
+        left: 20px;  /* Moves right */
+    }
+
+    /* 3. ABSOLUTE (moves relative to nearest positioned parent) */
+    .parent {
+        width: 350px;
+        height: 200px;
+        background: #ddd;
+        border: 2px dashed #999;
+        position: relative; /* important */
+        margin-bottom: 30px;
+    }
+
+    .absolute {
+        background: #e91e63;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* 4. FIXED (sticks to screen, not scrollable) */
+    .fixed {
+        background: #28a745;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* 5. STICKY (acts like relative, then sticks when scrolling) */
+    .sticky {
+        background: orange;
+        position: sticky;
+        top: 0; /* sticks at top while scrolling */
+    }
+
+    /* Extra tall content to show sticky/fixed effect */
+    .content {
+        height: 1500px;
+        padding-top: 20px;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>CSS Position Examples</h1>
+
+<div class="box static">STATIC</div>
+
+<div class="box relative">RELATIVE (moved)</div>
+
+<div class="parent">
+    <div class="box absolute">ABSOLUTE</div>
+</div>
+
+<div class="box sticky">STICKY (scroll down)</div>
+
+<div class="content">
+    Scroll here to see how <b>sticky</b> stays at top  
+    and <b>fixed</b> stays at bottom-right always.
+</div>
+
+<div class="box fixed">FIXED</div>
+
+</body>
+</html>
